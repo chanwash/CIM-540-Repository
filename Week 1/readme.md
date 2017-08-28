@@ -1,1 +1,4 @@
-hey
+# CIM 540 README BIO
+
+
+### Hey this is Channing and I am from Dallas, Texas and I am a sophomore at a University of Miami. I am studying Creative Advertising, and I have a minor in Architecture. I am currently enrolled in 6 classes for this semester. I am in CIM 540 - Creative Coding, STC 200 - Advertising Strategy, COM 250 - Communication Ethics, MKT 301 - Marketing Foundations, COS 211 - Public Speaking, and CIM 103 - Intro to Motion Pictures. I am very excited for all of these classes, and I think this semester will be a great semester. I have taken a progamming class my freshman year of high school, and a web coding class my junior year of high school.

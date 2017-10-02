@@ -51,16 +51,12 @@ First, I need the user to tell me the Fahrenheit tempertature they want me to co
         
         
         function convert(temperature){
-            var C;
-            C = (document.getElementById("tempInput").value - 32) * 5 / 9;
-            document.getElementById("tempInput").value = Math.round(C);
-            
-             output.innerHTML = "Above is the new temperature in Celsius";
+            var Celsius = (document.getElementById("tempInput").value - 32) * 5 / 9;
+            output.innerHTML = "The new temperature is  " + Math.round(Celsius) + " °C";
         }
             
           var output = document.getElementById("outputText");
             
-             
         console.log(answer);
                  
                     
@@ -69,10 +65,8 @@ First, I need the user to tell me the Fahrenheit tempertature they want me to co
             var answer;
             
         
-        
         </script>
-    
-    
     
     </body>
     
+</html>

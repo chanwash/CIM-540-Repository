@@ -87,10 +87,10 @@
             
             
          
-             } else if (consequence[chooseConsequence] == "Outran a predator") {
+             } else if (consequence[chooseConsequence] == "outran a predator") {
                 getMessage.innerHTML = "You " + consequence[chooseConsequence] + ". You are in a " + loc[chooseLocation];
     
-         } else if (consequence[chooseConsequence] == "Dodged a falling tree") {
+         } else if (consequence[chooseConsequence] == "dodged a falling tree") {
                 getMessage.innerHTML = "You " + consequence[chooseConsequence] + ". You are in a " + loc[chooseLocation];
             }
             
@@ -99,7 +99,7 @@
             
         
         
-        var consequence = ["dead", "survived", "Ran", "Dodged a falling tree"];
+        var consequence = ["dead", "survived", "lost a predator", "dodged a falling tree"];
         var loc = ["forest", "desert", "beach"];
         var getDir = document.getElementById("direction");
         getDir.addEventListener("click", move);

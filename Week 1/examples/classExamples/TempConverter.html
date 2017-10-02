@@ -1,0 +1,78 @@
+<!--
+What is a Code Plan?
+
+Example: Finding the center of a tootsie pop
+
+This program is a calculator where the user enters a current count of the licks they have given thier tootsie pop and the calculator returns a percentage of how far they have gone.
+
+inputs
+Temperature in Farenheit
+output
+message telling user their temperature in Celsius
+
+
+First, I need the user to tell me the Fahrenheit tempertature they want me to convert. I'll use a form text input for this. The user would have to click on a button to submit their answer. I'll need a button. When the user clicks the button, I'll activate my calculation function. In my function, I need to get the value of the form input. I'll grab the number subtract it by 32 and multiply the result by 5/9. This will give me the converted temperature. Then I'll return a message telling them the converted temperature.
+-->
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <title>Temp Converter</title>
+    
+        
+        <style>
+        /* Enter CSS below */
+        </style>
+    
+    
+    </head>
+
+    <body>
+    
+    <h1>Fahrenheit to Celsius Converter</h1>
+        <p><i>Choose a Fahrenheit Temperature</i></p>
+        
+        
+        <form>
+        <label for="tempInput">Enter the temperature :</label>
+        <input type="text" name="tempInput" id="tempInput">
+            <br><br>
+            <button type="button" id="convertButton">Convert</button>
+            <br><br>
+        
+        </form>
+        
+        <div id="outputText"></div>
+    
+    
+    <script>
+        /* Comment: Enter code below */
+        
+        
+        function convert(temperature){
+            var C;
+            C = (document.getElementById("tempInput").value - 32) * 5 / 9;
+            document.getElementById("tempInput").value = Math.round(C);
+            
+             output.innerHTML = "Above is the new temperature in Celsius";
+        }
+            
+          var output = document.getElementById("outputText");
+            
+             
+        console.log(answer);
+                 
+                    
+            var convertButton = document.getElementById("convertButton");
+            convertButton.addEventListener("click", convert);
+            var answer;
+            
+        
+        
+        </script>
+    
+    
+    
+    </body>
+    

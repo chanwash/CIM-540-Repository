@@ -1,8 +1,20 @@
-//Simple Character Assignment Due 10/9
+
 var CenterX = 0;
 var CenterY = 0;
 var changeBColor;
 var fSize = 200;
+var pics = [];
+var targetPosX = [100, 300, 500];
+var targetPosY = 100;
+var red1, green1, blue1;
+var linePoints = [0, 0, 400, 0];
+
+
+
+
+//add in sliders to change color 
+
+
 
 function preload() {
     
@@ -15,7 +27,25 @@ function preload() {
 function setup() {
    createCanvas(1000, 500);
     
-  
+    
+     var red1 = createP("Red");
+    hRedColor = createSlider(0, 255, 0);
+    var black1 = createP("green");
+    hGreenColor = createSlider(0, 255, 0);
+    var blue1 = createP("Blue");
+    hBlueColor = createSlider(0, 255, 0);
+    
+    
+    
+    pics[0] = loadImage("assets/snake1.png");
+
+     pics[1] = loadImage("assets/snake2.png");
+
+     pics[2] = loadImage("assets/snake3.png");
+    
+    
+   
+
 
     posX = width/2;
     posY = 100;
@@ -41,6 +71,16 @@ bgChange.mousePressed(changeBg2Func);
 
 function draw(){
     
+    background(255);
+    
+    
+    
+    
+    
+    
+
+    
+    
    // background(bgColor);
     
    // background(bgImage);
@@ -51,54 +91,75 @@ function draw(){
         centerX = mouseX;
         centerY = mouseY;
     
-    
+
     
     strokeWeight(2);
     
-     var bodyWiggle = map(mouseX,0,width,-50,50);
+    
+    
+     var bodyWiggle = map(centerX,0,width,-130,130);
    // console.log("noseWiggle: " + noseWiggle);
     
-    var bodyWiggleY = map(mouseY, 0, height, 0,50);
+    var bodyWiggleY = map(centerY, 0, height, 0,130);
     
-         var bodyWiggle2 = map(mouseX,0,width,-60,60);
+         var bodyWiggle2 = map(centerX,0,width,-130,130);
    // console.log("noseWiggle: " + noseWiggle);
     
-    var bodyWiggleY2 = map(mouseY, 0, height, 0,60);
+    var bodyWiggleY2 = map(centerY, 0, height, 0,130);
+    
+  
     
     
         //body
-       fill("green");
-    ellipse(posX-450 + bodyWiggle, posY+110 + bodyWiggleY, fSize, fSize)
+     fill("green");
+    ellipse(centerX-450 + bodyWiggle, centerY+110 + bodyWiggleY, fSize, fSize)
     
        fill("#6CE540");
-    ellipse(posX-400 + bodyWiggle2, posY+110 + bodyWiggleY2, fSize, fSize)
+    ellipse(centerX-400 + bodyWiggle2, centerY+110 + bodyWiggleY2, fSize, fSize)
     
       fill("green");
-    ellipse(posX-360 + bodyWiggle, posY+110 + bodyWiggleY, fSize, fSize)
+    ellipse(centerX-360 + bodyWiggle, centerY+110 + bodyWiggleY, fSize, fSize)
     
        fill("#6CE540");
-    ellipse(posX-320 + bodyWiggle2, posY+110 + bodyWiggleY2, fSize, fSize)
+    ellipse(centerX-320 + bodyWiggle2, centerY+110 + bodyWiggleY2, fSize, fSize)
     
         fill("green");
-    ellipse(posX-280 + bodyWiggle, posY+100 + bodyWiggleY, fSize, fSize)
+    ellipse(centerX-280 + bodyWiggle, centerY+100 + bodyWiggleY, fSize, fSize)
     
       fill("#6CE540");
-    ellipse(posX-250 + bodyWiggle2, posY+140 + bodyWiggleY2, fSize, fSize)
+    ellipse(centerX-250 + bodyWiggle2, centerY+140 + bodyWiggleY2, fSize, fSize)
     
     fill("green");
-    ellipse(posX-230 + bodyWiggle, posY+170 + bodyWiggleY, fSize, fSize)
+    ellipse(centerX-230 + bodyWiggle, centerY+170 + bodyWiggleY, fSize, fSize)
     
     fill("#6CE540");
-    ellipse(posX-190 + bodyWiggle2, posY+190 + bodyWiggleY2, fSize, fSize)
+    ellipse(centerX-190 + bodyWiggle2, centerY+190 + bodyWiggleY2, fSize, fSize)
     
     fill("green");
-    ellipse(posX-150 + bodyWiggle, posY+200 + bodyWiggleY, fSize, fSize)
+    ellipse(centerX-150 + bodyWiggle, centerY+200 + bodyWiggleY, fSize, fSize)
     
      fill("#6CE540");
-    ellipse(posX-110 + bodyWiggle2, posY+130 + bodyWiggleY2, fSize, fSize)
+    ellipse(centerX-110 + bodyWiggle2, centerY+130 + bodyWiggleY2, fSize, fSize)
+    
+    
+        //var value = "green";
+//function draw() {
+ // fill(value);
+//  ellipse(posX-70 + bodyWiggle, posY+70 + bodyWiggleY, fSize, fSize)
+//}
+//function mousePressed() {
+  //if (value == "green") {
+   // value = "6CE540";
+  //} else {
+  //  value = "green";
+  //}
+//}
+    
+
     
     fill("green");
-    ellipse(posX-70 + bodyWiggle, posY+70 + bodyWiggleY, fSize, fSize)
+   ellipse(centerX -70 + bodyWiggle, centerY +70 + bodyWiggleY, fSize, fSize)
+    
     
     
     
@@ -113,30 +174,88 @@ function draw(){
     
     //Face
     fill("#6CE540");
-    ellipse(posX -10 + noseWiggle, posY + 10 + noseWiggleY, fSize, fSize);
+    ellipse(centerX + noseWiggle, centerY + noseWiggleY, fSize, fSize);
 
     
     //mouth
-    fill("black");
+    
+    fill(random(255), random(255), random(255));;
     //rect(posX- 50, posY+ 50, 100,20);
-    ellipse(posX + noseWiggle, posY + 40 + noseWiggleY, 30, 30);
+    ellipse(centerX + noseWiggle, centerY + 40 + noseWiggleY, 30, 30);
     
        strokeWeight(0);
     //eyes
     fill("white");
-    ellipse(posX - 30 + noseWiggle, posY - 20 + noseWiggleY, 25, 45);
-    ellipse(posX + 30 + noseWiggle, posY - 20 + noseWiggleY, 25, 45);
+    ellipse(centerX - 30 + noseWiggle, centerY - 20 + noseWiggleY, 25, 45);
+    ellipse(centerX + 30 + noseWiggle, centerY - 20 + noseWiggleY, 25, 45);
  
+    var eyeWiggle = map(mouseX, 0, width, -30,30);
+    var eyeWiggleY = map(mouseY, 0, height, 0,30);
+    
+  stroke(hRedColor.value(), hGreenColor.value(), hBlueColor.value());
+    
+    //crazy
+    //            frameRate(40);
+  //  for (var i = 0; i < height; i++) {
+  //      stroke(random(255), random(255), random(255));
+ //       line(linePoints[0], linePoints[1], linePoints[2], linePoints[3]);
+  //      linePoints[1]++;
+  //      linePoints[3]++;
+ //   }
+
+    linePoints = [0, 0, 400, 0];
+    
     
     //pupils
     fill("black");
-    ellipse(posX - 30 + noseWiggle, posY - 20 + noseWiggleY, 15, 35);
-    ellipse(posX + 30 + noseWiggle, posY - 20 + noseWiggleY, 15, 35);
+    ellipse(centerX - 30 + eyeWiggle, centerY - 20 + eyeWiggleY, 15, 35);
+    ellipse(centerX + 30 + eyeWiggle, centerY - 20 + eyeWiggleY, 15, 35);
      strokeWeight(3);
     
     //mouthline
     //line(posX - 50, posY + 60, posX + 50, posY + 60);
+    
+    
+    // rectMode(CENTER);
+   // imageMode(CENTER);
+    
+    
+ 
+
+    
+    //Mapping Code
+    if (mouseX > targetPosX[0] - 100 && mouseX < targetPosX[0] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
+        image(pics[0], 0, targetPosY, 300, 300);
+
+    } else {
+       // rect(targetPosX[0], 100, 200, 200);
+    }
+
+    if (mouseX > targetPosX[1] - 100 && mouseX < targetPosX[1] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
+  image(pics[1], targetPosX[1], targetPosY, 300, 300);
+
+    } else {
+     // rect(targetPosX[1], 100, 200, 200);
+  }
+
+ if (mouseX > targetPosX[2] - 100 && mouseX < targetPosX[2] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
+        image(pics[2], targetPosX[2], targetPosY, 300, 300);
+
+  } else {
+      // rect(targetPosX[2], 100, 200, 200);
+ }
+
+    
+
+
+
 }
+    
+    
+    
+    
+
+
   
     function changeBgFunc(){
         currentBgImage = bgImage2;
@@ -151,14 +270,11 @@ function draw(){
     function mousePressed(){
    console.log("mousePressed");
     bgColor = color(0, 255, 0);
-
-
-  
-      
+         
 }
 
+
     
-//
 
     
 

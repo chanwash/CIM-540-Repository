@@ -20,6 +20,8 @@ var cup2x = 740;
 var cup2y = 460;
 var rick0x = 840;
 var rick0y = 480;
+var rick1x = 560;
+var rick1y = 460;
 
 var cup0target = [740,560,380];
 var cup0counter = 0;
@@ -30,8 +32,11 @@ var cup1counter = 0;
 var cup2target = [560,380,740];
 var cup2counter = 0;
 
-var rick0target = [790,380, 650, 700, 750, 500, 380];
+var rick0target = [790,380,570]; //650, 700, 750,
 var rick0counter = 0;
+
+var rick1target = [390, 750, 570]
+var rick1counter = 0;
 
 
 
@@ -44,9 +49,12 @@ function preload(){
  imageArray.push(loadImage('assets/pickle.png'));
     imageArray.push(loadImage('assets/garage.png'));
         imageArray.push(loadImage('assets/garage1.png'));
+    soundFormats('mp3');
+    mySound = loadSound('assets/pickle_rick.mp3');
+    mySound2 = loadSound('assets/Wubba.mp3');
 
 
-    
+    //need levels, guessing system
     
 }
 //Code Plan
@@ -57,6 +65,8 @@ function setup(){
     
     createCanvas(1500,1500);    
     
+  
+    
     startButton = createButton("Go");
     startButton.position(0,550);
     
@@ -65,7 +75,9 @@ function setup(){
     
     startButton.mousePressed(function(){
         if(moveCups == false){
-           moveCups=true;            
+           moveCups=true;   
+            mySound2.setVolume(2);
+    mySound2.play();
            
            }else{
                moveCups = false;
@@ -80,7 +92,9 @@ function setup(){
     
      startButton.mousePressed(function(){
         if(hideRick == false){
-           hideRick=true;            
+           hideRick=true;  
+            mySound.setVolume(3);
+    mySound.play();
            
            }else{
                hideRick = false;
@@ -100,7 +114,7 @@ function draw(){
         
     image(imageArray[3], 0,1500,imageArray[3].width/4.5,imageArray[3].height/4.5);
     
-    image(imageArray[4], rick0x,rick0y,imageArray[4].width/5,imageArray[4].height/5);
+    image(imageArray[4], rick0x,rick0y,imageArray[4].width/5.5,imageArray[4].height/5.5);
     
     image(imageArray[6], 0,0,imageArray[6].width/1.1,imageArray[6].height/1.1);
     
@@ -147,7 +161,13 @@ function draw(){
          }
          
          
-         
+         if(rick0x == rick1target[rick1counter]){
+            rick1counter++;
+            } else if(rick0x < rick1target[rick1counter]){
+             rick0x++;
+         }else if(rick0x > rick1target[rick1counter]){
+             rick0x--;
+         }
          
      }
          
@@ -156,10 +176,13 @@ function draw(){
              
     if(rick0x == rick0target[rick0counter]){
             rick0counter++;
+          
             } else if(rick0x < rick0target[rick0counter]){
              rick0x++;
+                 
          }else if(rick0x > rick0target[rick0counter]){
              rick0x--;
+            
          }
           
          

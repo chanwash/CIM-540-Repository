@@ -22,6 +22,8 @@ var rick0x = 840;
 var rick0y = 480;
 var rick1x = 560;
 var rick1y = 460;
+var morty0x = 560;
+var morty0y = 580;
 
 var cup0target = [740,560,380];
 var cup0counter = 0;
@@ -32,12 +34,14 @@ var cup1counter = 0;
 var cup2target = [560,380,740];
 var cup2counter = 0;
 
-var rick0target = [790,380,570]; //650, 700, 750,
+var rick0target = [790,388,570]; //650, 700, 750,
 var rick0counter = 0;
 
 var rick1target = [390, 750, 570]
 var rick1counter = 0;
 
+var morty0target = [270]
+var morty0counter = 0;
 
 
 
@@ -52,6 +56,9 @@ function preload(){
     soundFormats('mp3');
     mySound = loadSound('assets/pickle_rick.mp3');
     mySound2 = loadSound('assets/Wubba.mp3');
+    imageArray.push(loadImage('assets/morty.png'));
+    imageArray.push(loadImage('assets/garage2.png'));
+    
 
 
     //need levels, guessing system
@@ -63,11 +70,11 @@ function preload(){
 
 function setup(){
     
-    createCanvas(1500,1500);    
+    createCanvas(1500,760);    
     
   
     
-    startButton = createButton("Go");
+    startButton = createButton("Begin the Game");
     startButton.position(0,550);
     
    
@@ -76,7 +83,7 @@ function setup(){
     startButton.mousePressed(function(){
         if(moveCups == false){
            moveCups=true;   
-            mySound2.setVolume(2);
+            mySound2.setVolume(1);
     mySound2.play();
            
            }else{
@@ -109,18 +116,37 @@ function setup(){
 function draw(){
     background(255);
     
+    
+    
+ 
+    
       
     image(imageArray[5], 0,0,imageArray[5].width/1.1,imageArray[5].height/1.1);
         
     image(imageArray[3], 0,1500,imageArray[3].width/4.5,imageArray[3].height/4.5);
     
-    image(imageArray[4], rick0x,rick0y,imageArray[4].width/5.5,imageArray[4].height/5.5);
+   
+    
+    
+    
+    image(imageArray[7], morty0x,morty0y,imageArray[7].width/1.5, imageArray[7].height/1.5);
+    //morty^
+    
+     image(imageArray[4], rick0x,rick0y,imageArray[4].width/5.5,imageArray[4].height/5.5);
     
     image(imageArray[6], 0,0,imageArray[6].width/1.1,imageArray[6].height/1.1);
+    
+    image(imageArray[8], 0,0,imageArray[8].width/1.1,imageArray[8].height/1.1);
+    
     
      image(imageArray[0], cup0x,cup0y,imageArray[0].width/16,imageArray[0].height/16);
           image(imageArray[1], cup1x,cup1y,imageArray[1].width/16,imageArray[1].height/16);
                 image(imageArray[2], cup2x,cup2y,imageArray[2].width/16,imageArray[2].height/16);
+    
+       
+    
+    
+    
     
     
      if(moveCups == true){
@@ -169,6 +195,8 @@ function draw(){
              rick0x--;
          }
          
+         
+         
      }
          
          if(hideRick == true){
@@ -183,6 +211,14 @@ function draw(){
          }else if(rick0x > rick0target[rick0counter]){
              rick0x--;
             
+         }
+             
+              if(morty0y == morty0target[morty0counter]){
+            morty0counter++;
+            } else if(morty0y < morty0target[morty0counter]){
+             morty0y++;
+         }else if(morty0y > morty0target[morty0counter]){
+             morty0y--;
          }
           
          

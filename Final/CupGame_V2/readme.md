@@ -1,0 +1,1 @@
+In this version I have fixed the movement so that Rick moves around with the cups when you press go. Also I have added in sound effects, which are quotes from the show. The game is almost finished, but I still need to add levels and a way to chose the cup.

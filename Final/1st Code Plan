@@ -1,0 +1,11 @@
+Code Plan
+
+My project is an interactive guessing game. When the user clicks the "Hide Rick" button, Rick comes out of the 
+drawer and moves around the screen until he hides behind a cup. Once he stops moving and hides then the user hits
+the "Go" button and the cups begin to make back and forth across the table. At this time, rick will then sync up 
+with one of the cups movements, so that he cannot be seen by the mover. When the cups stop moving then the user will
+have the option to pick which cup Rick is behind. If they win then they are greeted with an audio file and a celebration
+message. Also when the Hide Rick button is pressed, then a song about Pickle Rick will play so the user can listen to
+music as they play the game. Also there will be a button so that the user can switch the difficulty of the game. When they
+press the dificulty buttons, it will change the speed of how fast the cups move. So overall the user interaction focuses 
+around pressing buttons and following the cups so that they can guess which cup Rick is hiding behind.

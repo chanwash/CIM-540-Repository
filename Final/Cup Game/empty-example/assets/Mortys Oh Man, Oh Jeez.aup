@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Mortys Oh Man, Oh Jeez_data" version="1.3.0" audacityversion="2.0.5" sel0="105.4057889823" sel1="105.4057889823" vpos="0" h="0.0000000000" zoom="1.1764059754" rate="44100.0">
+	<tags>
+		<tag name="major_brand" value="mp42"/>
+		<tag name="Software" value="Lavf56.19.100"/>
+		<tag name="compatible_brands" value="isommp42"/>
+		<tag name="minor_version" value="0"/>
+		<tag name="TITLE" value="Morty&apos;s &quot;Oh Man, Oh Jeez!&quot; Moments"/>
+	</tags>
+	<wavetrack name="Mortys Oh Man, Oh Jeez Moments" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="299896">
+				<waveblock start="0">
+					<simpleblockfile filename="e000071f.au" len="149948" min="-0.577372" max="0.581436" rms="0.132973"/>
+				</waveblock>
+				<waveblock start="149948">
+					<simpleblockfile filename="e0000274.au" len="149948" min="-0.575847" max="0.582306" rms="0.13213"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Mortys Oh Man, Oh Jeez Moments" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="299896">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000c30.au" len="149948" min="-0.578092" max="0.579754" rms="0.132973"/>
+				</waveblock>
+				<waveblock start="149948">
+					<simpleblockfile filename="e0000350.au" len="149948" min="-0.575847" max="0.582305" rms="0.132128"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

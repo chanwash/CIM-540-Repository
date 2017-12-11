@@ -30,7 +30,7 @@ function setup() {
     
      var red1 = createP("Red");
     hRedColor = createSlider(0, 255, 0);
-    var black1 = createP("green");
+    var black1 = createP("Green");
     hGreenColor = createSlider(0, 255, 0);
     var blue1 = createP("Blue");
     hBlueColor = createSlider(0, 255, 0);

@@ -55,7 +55,7 @@ function preload(){
         imageArray.push(loadImage('assets/garage1.png'));
     soundFormats('mp3');
     mySound = loadSound('assets/pickle_rick.mp3');
-    mySound2 = loadSound('assets/Wubba.mp3');
+    mySound2 = loadSound('assets/Mortys Oh Man, Oh Jeez.wav');
     imageArray.push(loadImage('assets/morty.png'));
     imageArray.push(loadImage('assets/garage2.png'));
     
@@ -116,11 +116,7 @@ function setup(){
 function draw(){
     background(255);
     
-    
-    
- 
-    
-      
+   
     image(imageArray[5], 0,0,imageArray[5].width/1.1,imageArray[5].height/1.1);
         
     image(imageArray[3], 0,1500,imageArray[3].width/4.5,imageArray[3].height/4.5);

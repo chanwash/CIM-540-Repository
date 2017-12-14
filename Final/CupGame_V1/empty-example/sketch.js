@@ -93,9 +93,10 @@ function setup(){
 }
 
 function draw(){
+    
+    
     background(255);
     
-      
     image(imageArray[5], 0,0,imageArray[5].width/1.1,imageArray[5].height/1.1);
         
     image(imageArray[3], 0,1500,imageArray[3].width/4.5,imageArray[3].height/4.5);

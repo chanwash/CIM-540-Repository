@@ -6,11 +6,21 @@ var directionY = false;
 var startButton;
 var moveCups = false;
 var hideRick = false;
+var resetGame = false;
+
+var selectCup0 = false;
+var selectCup1 = false;
+var selectCup2 = false;
+
 
 var imageArray = [];
 
+var select;
+
+
 var x = posX;
 var y = posY;
+
 
 var cup0x = 380;
 var cup0y = 460;
@@ -45,8 +55,9 @@ var morty0counter = 0;
 
 
 
+
 function preload(){
-    imageArray.push(loadImage('assets/red_cup1.png'));
+imageArray.push(loadImage('assets/red_cup1.png'));
     imageArray.push(loadImage('assets/red_cup2.png'));
     imageArray.push(loadImage('assets/red_cup3.png'));
     imageArray.push(loadImage('assets/table.png'));
@@ -58,6 +69,9 @@ function preload(){
     mySound2 = loadSound('assets/Mortys Oh Man, Oh Jeez.wav');
     imageArray.push(loadImage('assets/morty.png'));
     imageArray.push(loadImage('assets/garage2.png'));
+    imageArray.push(loadImage('assets/logo1.png'));
+    
+   
     
 
 
@@ -70,9 +84,22 @@ function preload(){
 
 function setup(){
     
-    createCanvas(1500,760);    
+    createCanvas(1500,760);  
     
-  
+
+    select = imageArray[0];
+    select.mousePressed(function(){
+        if(selectCup0 == false){
+           selectCup0=true;  
+             mySound.setVolume(3);
+             mySound.play();
+   
+           }else{
+               selectCup0 = false;
+           }   
+    });
+   
+    
     
     startButton = createButton("Begin the Game");
     startButton.position(0,550);
@@ -85,6 +112,7 @@ function setup(){
            moveCups=true;   
             mySound2.setVolume(1);
     mySound2.play();
+            
            
            }else{
                moveCups = false;
@@ -111,10 +139,69 @@ function setup(){
     });
     
     
+
+    
+    
+//      startButton = createButton();
+//      startButton.mousePressed(function(){
+//        if(selectCup0 == false){
+//           selectCup0=true;  
+//             mySound.setVolume(3);
+//    mySound.play();
+//   
+//           }else{
+//               selectCup0 = false;
+//           }   
+//    });
+    
+//    imageArray[1].mousePressed(function(){
+//        if(selectCup1 == false){
+//           selectCup1=true;  
+//   
+//           }else{
+//               selectCup1 = false;
+//           }   
+//    });
+//       imageArray[2].mousePressed(function(){
+//        if(selectCup2 == false){
+//           selectCup2=true;  
+//   
+//           }else{
+//               selectCup2 = false;
+//           }
+//        
+//    });
+//    
+    
+     startButton = createButton("Reset Game");
+    startButton.position(0,600);
+     startButton.mousePressed(function(){
+        if(resetGame == false){
+           resetGame=true;  
+                cup0counter = 0;           
+                            cup1counter = 0;       
+                            cup2counter = 0;   
+            rick0counter = 0;
+            rick1counter = 0;
+                cup0target = 380;
+                cup1target = 560;
+                cup2target = 740;
+                rick0target = 840;
+
+
+           }else{
+               resetGame = false;
+           }
+        
+        
+    });
+    
+    
 }
 
 function draw(){
     background(255);
+
     
    
     image(imageArray[5], 0,0,imageArray[5].width/1.1,imageArray[5].height/1.1);
@@ -125,7 +212,7 @@ function draw(){
     
     
     
-    image(imageArray[7], morty0x,morty0y,imageArray[7].width/1.5, imageArray[7].height/1.5);
+    image(imageArray[7], morty0x, morty0y,imageArray[7].width/1.5, imageArray[7].height/1.5);
     //morty^
     
      image(imageArray[4], rick0x,rick0y,imageArray[4].width/5.5,imageArray[4].height/5.5);
@@ -134,15 +221,14 @@ function draw(){
     
     image(imageArray[8], 0,0,imageArray[8].width/1.1,imageArray[8].height/1.1);
     
-    
-     image(imageArray[0], cup0x,cup0y,imageArray[0].width/16,imageArray[0].height/16);
+    image(imageArray[0], cup0x,cup0y,imageArray[0].width/16,imageArray[0].height/16);
           image(imageArray[1], cup1x,cup1y,imageArray[1].width/16,imageArray[1].height/16);
                 image(imageArray[2], cup2x,cup2y,imageArray[2].width/16,imageArray[2].height/16);
     
        
-    
-    
-    
+
+    image(imageArray[9], -110,-100,imageArray[9].width/1.5,imageArray[9].height/1.5);
+
     
     
      if(moveCups == true){
@@ -225,6 +311,10 @@ function draw(){
   }
     
     posY++;
+
+
+
+
     
 
 

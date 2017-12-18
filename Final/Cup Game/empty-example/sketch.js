@@ -215,7 +215,8 @@ function reset(){
                 cup1x = 560;
                 cup2x = 740;
                 rick0x = 840;
-    
+                rick0y = 480;
+
     
 }
 
